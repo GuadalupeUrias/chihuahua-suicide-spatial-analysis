@@ -27,6 +27,13 @@ diferencia) es el insumo de entrada aquí, filtrado a `Ent_ocurr == '08'`
   proyecciones de la población de los municipios de México 1990-2040"
   (publicado 2024). https://www.gob.mx/conapo/documentos/reconstruccion-y-proyecciones-de-la-poblacion-de-los-municipios-de-mexico-1990-2040
 
+## Decisión metodológica ya validada
+
+Se usa `Ent_resid`/`Mun_resid` (residencia habitual), no `Ent_ocurr`/`Mun_ocurr`
+(lugar de ocurrencia) — validado contra cifra de prensa 2023 (554 vs. 561
+casos, 1.25% diff) y consistente con que el denominador poblacional de CONAPO
+es por residencia. Detalle completo en [`docs/methodology.md`](docs/methodology.md).
+
 ## Decisión metodológica pendiente de definir
 
 Municipios con pocos casos por año van a tener tasas muy inestables
