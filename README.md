@@ -34,16 +34,14 @@ Se usa `Ent_resid`/`Mun_resid` (residencia habitual), no `Ent_ocurr`/`Mun_ocurr`
 casos, 1.25% diff) y consistente con que el denominador poblacional de CONAPO
 es por residencia. Detalle completo en [`docs/methodology.md`](docs/methodology.md).
 
-## Decisión metodológica pendiente de definir
+## Decisión metodológica: incertidumbre en tasas municipales
 
-Municipios con pocos casos por año van a tener tasas muy inestables
-(varianza alta en denominadores pequeños). Opciones a evaluar antes de
-reportar resultados finales:
-- Tasas trianuales o quinquenales en vez de anuales para municipios pequeños
-- Intervalos de confianza explícitos (ej. Poisson) en vez de solo la tasa puntual
-- Suavizado espacial (bayesiano empírico) si se justifica
-
-_Documentar aquí la decisión final y su justificación una vez tomada._
+Se mantiene granularidad **anual** (no se agregan varios años en un solo
+periodo), pero cada tasa se reporta junto con su **intervalo de confianza
+95% (Poisson exacto)**. Municipios con pocos casos muestran tasas puntuales
+altas pero intervalos muy anchos — eso se interpreta como evidencia de
+incertidumbre real, no se oculta ni se suaviza artificialmente. Ver
+`docs/methodology.md` y `notebooks/02_population_merge.ipynb`, sección 5b.
 
 ## Estructura
 
